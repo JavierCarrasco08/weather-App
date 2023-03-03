@@ -1,13 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full w-full">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="src/images/Icons/nube.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles/dist/output.css" />
+    <title>Weather App</title>
+    <script type="module" src="src/javascript/main.js" defer></script>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+  <body class="font-raleway w-full h-full max-w-[1400px] mx-auto">
+    <div
+      class="fixed top-0 left-0 right-0 bottom-0 bg-layer text-layerText flex flex-col items-center justify-center gap-5 transition duration-700 text-xs phoneUp:text-sm tablet:text-base overflow-hidden">
+      <figure class="absolute top-1 right-1 lg:top-4 lg:right-4">
+        <img
+          class="w-8 lg:w-16 2xl:w-28 cursor-pointer md:hover:rotate-180 transition duration-700 layer-exit"
+          src="src/svg/exit.svg"
+          alt="Arrow exit" />
+      </figure>
+      <h2
+        class="text-xl phoneUp:text-3xl tablet:text-6xl font-bold uppercase tracking-widest">
+        Attribution
+      </h2>
+      <figure class="w-1/5 tablet:w-2/12 lg:w-24 2xl:w-40 animate-pulse">
+        <img src="src/images/Icons/nube.png" alt="Loader nube" />
+      </figure>
+      <div class="w-4/5 flex flex-wrap justify-center gap-8">
+        <section>
+          <h3 class="text-xl phoneUp:text-2xl text-center mb-1 2xl:text-4xl">
+            Photos
+          </h3>
+          <p>
+            Photo by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/@courtneymcook?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              rel="noopener referrer"
+              >Courtney Cook</a
+            >in<a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/es/fotos/HClKQKUodF4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Unsplash</a
+            >
+          </p>
+          <p>
+            Photo by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/@r_shayesrehpour?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >reza shayestehpour</a
+            >
+            in
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/es/fotos/Nw_D8v79PM4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Unsplash</a
+            >
+          </p>
+          <p>
+            Photo by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/@billy_huy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Billy Huynh</a
+            >
+            in
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/es/fotos/v9bnfMCyKbg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Unsplash</a
+            >
+          </p>
+          <p>
+            Photo by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/@adinc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Altınay Dinç</a
+            >
+            in
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/es/fotos/LluELtL5mK4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Unsplash</a
+            >
+          </p>
+          <p>
+            Photo by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/@adinc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Altınay Dinç</a
+            >
+            in
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://unsplash.com/es/fotos/LluELtL5mK4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              rel="noopener referrer"
+              target="_blank"
+              >Unsplash</a
+            >
+          </p>
+        </section>
+        <section class="w-80 2xl:w-96">
+          <h3 class="text-xl phoneUp:text-2xl text-center mb-1 2xl:text-4xl">
+            Icons
+          </h3>
+          <p>
+            Icons designer by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://www.flaticon.es/autores/freepik"
+              target="_blank"
+              rel="noopener referrer"
+              title="Freepik">
+              Freepik
+            </a>
+            from
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://www.flaticon.es/"
+              target="_blank"
+              rel="noopener referrer"
+              title="Flaticon">
+              www.flaticon.es'</a
+            >
+          </p>
+          <p>
+            Icons designer by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://www.flaticon.es/autores/karlop19"
+              target="_blank"
+              rel="noopener referrer"
+              title="KarLop19">
+              KarLop19
+            </a>
+            from
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://www.flaticon.es/"
+              title="Flaticon"
+              target="_blank"
+              rel="noopener referrer"
+              >www.flaticon.es'</a
+            >
+          </p>
+          <div>
+            Icons designer by
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://www.flaticon.es/autores/juicy-fish"
+              title="juicy_fish"
+              target="_blank"
+              rel="noopener referrer">
+              juicy_fish
+            </a>
+            from
+            <a
+              class="text-layerRuta font-bold mx-2 hover:shadow-a hover:shadow-layerRuta hover:text-layerText hover:bg-layerRuta transition duration-700"
+              href="https://www.flaticon.es/"
+              title="Flaticon"
+              target="_blank"
+              rel="noopener referrer"
+              >www.flaticon.es'</a
+            >
+          </div>
+        </section>
+      </div>
+    </div>
+    <main
+      class="h-full w-full bg-sun bg-cover bg-moonPosition bg-no-repeat flex flex-col items-center justify-between px-2 py-3 tablet:px-4 tablet:items-start">
+      <header
+        class="w-full flex justify-center flex-wrap tablet:justify-between tablet:items-center gap-4">
+        <section
+          class="grid grid-cols-2 grid-rows-2 bg-gradientMoon shadow-shadowMoon rounded-xl p-2 text-xs text-textSun">
+          <figure class="flex items-center justify-start col-span-2 px-3">
+            <img
+              class="w-10 phoneUp:w-16 tablet:w-20"
+              src="src/images/Icons/sol.png"
+              alt="icono de nube" />
+          </figure>
+          <div
+            class="col-start-1 col-end-2 row-start-2 row-end-3 flex justify-center items-center">
+            <section class="flex items-center">
+              <h1
+                class="text-3xl phoneUp:text-4xl tablet:text-5xl m-0 font-bold"></h1>
+              <figure class="w-8 phoneUp:w-16">
+                <img
+                  src="src/images/Icons/termometroC.png"
+                  alt="icono de termómetro" />
+              </figure>
+            </section>
+          </div>
+          <div
+            class="col-start-2 col-end-3 row-start-2 row-end-3 flex flex-col gap-2 phoneUp:text-xl">
+            <section class="flex items-center justify-between">
+              <h3 class="font-normal"></h3>
+              <figure class="w-4 phoneUp:w-8">
+                <img src="src/images/Icons/ciudad.png" alt="icono de ciudad" />
+              </figure>
+            </section>
+            <section class="flex items-center justify-between">
+              <h3 class="font-normal"></h3>
+              <figure class="w-4 phoneUp:w-8">
+                <img src="src/images/Icons/reloj.png" alt="Icono de reloj" />
+              </figure>
+            </section>
+            <section class="flex items-center justify-between">
+              <h3 class="font-normal"></h3>
+              <figure class="w-4 phoneUp:w-8">
+                <img
+                  src="src/images/Icons/humedad.png"
+                  alt="Icono de humedad" />
+              </figure>
+            </section>
+            <section class="flex items-center justify-between">
+              <h3 class="font-normal"></h3>
+              <figure class="w-4 phoneUp:w-8">
+                <img
+                  src="src/images/Icons/calendario.png"
+                  alt="calendario icono" />
+              </figure>
+            </section>
+          </div>
+        </section>
+        <section
+          class="w-full flex flex-wrap gap-4 items-center justify-center w-4/5 phoneUp:w-4/5 tablet:w-4/5 tablet:justify-start md:w-2/4">
+          <input
+            type="text"
+            class="block p-2 px-4 rounded-2xl border-none outline-none bg-gradientMoon text-textSun font-normal w-11/12 tablet:w-2/4 md:w-3/5"
+            id="search-input"
+            autocomplete="off"
+            placeholder="Search for a city or country... Example: Madrid" />
+          <input
+            type="button"
+            value="Search"
+            id="search-button"
+            class="cursor-pointer p-2 px-8 bg-gradientMoon text-textSun font-bold rounded-3xl md:hover:scale-110 transition duration-700" />
+        </section>
+      </header>
+      <footer
+        class="h-52 w-full bg-gradientMoon rounded-xl overflow-x-hidden"></footer>
+    </main>
   </body>
 </html>
