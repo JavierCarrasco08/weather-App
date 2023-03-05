@@ -8,7 +8,7 @@ $FORM.addEventListener("pointerdown", async (e) => {
     let res = await apiGeocoder($FORM.firstElementChild.value);
     let objWeather = await apiWeather(...res);
     console.log(objWeather);
-    cardWeather(objWeather);
+    cardWeather(objWeather, $FORM.firstElementChild.value);
     $FORM.firstElementChild.value = "";
   }
 });
