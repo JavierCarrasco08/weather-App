@@ -28,3 +28,16 @@ export async function apiWeather(obj) {
     return error;
   }
 }
+
+export async function apiForecast(obj) {
+  try {
+    let res = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${obj.lat}&lon=${obj.lon}&appid=${API_KEY}`
+      ),
+      json = await res.json();
+    if (!res.ok) throw obj;
+    return json;
+  } catch (error) {
+    return error;
+  }
+}

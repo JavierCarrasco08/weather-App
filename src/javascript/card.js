@@ -24,3 +24,42 @@ export function cardWeather(
   $ICON_WEATHER.src = ICONS[wea.main];
   $ICON_WEATHER.alt = `icons ${wea.main}`;
 }
+
+export function cardForecast(obj) {
+  const LIST = obj.list;
+  const ARRAY_SECTION = [];
+  LIST.forEach((elem) => {
+    if (elem.sys.pod === "n") {
+      ICONS.Clear = "./src/images/Icons/fases-de-la-luna.png";
+      ICONS.Clouds = "./src/images/Icons/noche-nublada.png";
+    } else {
+      ICONS.Clear = "./src/images/Icons/sol.png";
+      ICONS.Clouds = "./src/images/Icons/nuboso.png";
+    }
+    let html = `
+    <header class="flex flex-col items-center justify-around p-3">
+    <figure class="w-8 phoneUp:w-16">
+    <img src="${ICONS[elem.weather[0].main]}" alt="icon ${
+      elem.weather[0].main
+    }">
+    </figure>
+    <h2>${elem.dt_txt}</h2>
+    </header>
+
+    <section class="grid grid-cols-2 gap-3">
+    <h3>${Math.floor(elem.main.temp - 273.15)}º</h3>
+    <h3>${elem.main.humidity}%</h3>
+    <h3>${elem.clouds.all}%</h3>
+    <h3>${elem.wind.speed}</h3>
+    </section>
+
+    <footer>
+    <h2>${elem.weather[0].description}</h2>
+    </footer>`;
+    const $SECTION = document.createElement("section");
+    $SECTION.innerHTML = html;
+    $SECTION.classList.add("phoneUp:text-xl", "w-52");
+    ARRAY_SECTION.push($SECTION);
+  });
+  return ARRAY_SECTION;
+}

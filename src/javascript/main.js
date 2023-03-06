@@ -1,14 +1,16 @@
-import { apiGeocoder, apiWeather } from "./api.js";
-import { cardWeather } from "./card.js";
+import { apiForecast, apiGeocoder, apiWeather } from "./api.js";
+import { cardForecast, cardWeather } from "./card.js";
 
 const $LAYER = document.querySelector(".layer-exit");
 const $FORM = document.querySelector("[data-form]");
+const $FOOTER_FORECAST = document.querySelector("[data-rol='footer']");
 $FORM.addEventListener("pointerdown", async (e) => {
   if (e.target.matches("#search-button")) {
     let res = await apiGeocoder($FORM.firstElementChild.value);
     let objWeather = await apiWeather(...res);
-    console.log(objWeather);
+    let objForecast = await apiForecast(...res);
     cardWeather(objWeather, $FORM.firstElementChild.value);
+    $FOOTER_FORECAST.append(...cardForecast(objForecast));
     $FORM.firstElementChild.value = "";
   }
 });
