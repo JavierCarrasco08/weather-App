@@ -41,3 +41,17 @@ export async function apiForecast(obj) {
     return error;
   }
 }
+
+export async function apiTimeZone(obj) {
+  const API_KEY_GEO = import.meta.env.VITE_API_KEY_GEO;
+  try {
+    let res = await fetch(
+        `https://api.ipgeolocation.io/timezone?apiKey=${API_KEY_GEO}&lat=${obj.lat}&long=${obj.lon}`
+      ),
+      json = await res.json();
+    if (!res.ok) throw obj;
+    return json;
+  } catch (error) {
+    return error;
+  }
+}
