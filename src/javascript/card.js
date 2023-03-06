@@ -9,9 +9,10 @@ export function cardWeather(
     sys: { country, sunrise, sunset },
   },
   name,
-  { date, time_12, time_24 }
+  { date, time_24 }
 ) {
   let wea = weather[0];
+  const $CONTAINER = document.querySelector("[data-rol='container']");
   const $GRADOS_H1 = document.querySelector("h1"),
     $HUMEDAD_H3 = document.querySelector("[data-rol='humedad']"),
     $HORA_H3 = document.querySelector('[data-rol="Hora"]'),
