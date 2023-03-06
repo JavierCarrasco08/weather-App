@@ -26,6 +26,8 @@ export function cardWeather(
 }
 
 export function cardForecast(obj) {
+  const $FOOTER_FORECAST = document.querySelector("[data-rol='footer']");
+  console.log($FOOTER_FORECAST.children);
   const LIST = obj.list;
   const ARRAY_SECTION = [];
   LIST.forEach((elem) => {
@@ -57,8 +59,8 @@ export function cardForecast(obj) {
     <h2>${elem.weather[0].description}</h2>
     </footer>`;
     const $SECTION = document.createElement("section");
-    $SECTION.innerHTML = html;
-    $SECTION.classList.add("phoneUp:text-xl", "w-52");
+    // $SECTION.innerHTML = html;
+    $SECTION.classList.add("phoneUp:text-xl");
     ARRAY_SECTION.push($SECTION);
   });
   return ARRAY_SECTION;
