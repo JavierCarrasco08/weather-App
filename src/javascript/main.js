@@ -6,12 +6,15 @@ const $FORM = document.querySelector("[data-form]");
 const $FOOTER_FORECAST = document.querySelector("[data-rol='footer']");
 $FORM.addEventListener("pointerdown", async (e) => {
   if (e.target.matches("#search-button")) {
+    if ($FOOTER_FORECAST.children.length !== 0) {
+      $FOOTER_FORECAST.innerHTML = "";
+    }
     let res = await apiGeocoder($FORM.firstElementChild.value);
     let objWeather = await apiWeather(...res);
-    // let objForecast = await apiForecast(...res);
+    let objForecast = await apiForecast(...res);
     let objTimeZone = await apiTimeZone(...res);
     cardWeather(objWeather, $FORM.firstElementChild.value, objTimeZone);
-    // $FOOTER_FORECAST.append(...cardForecast(objForecast));
+    $FOOTER_FORECAST.append(...cardForecast(objForecast));
     $FORM.firstElementChild.value = "";
   }
 });

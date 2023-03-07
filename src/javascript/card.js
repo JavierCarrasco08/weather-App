@@ -1,4 +1,5 @@
 import { formHours } from "./formData.js";
+import { weatherSite } from "./weatherSite.js";
 import { ICONS } from "./weather_img_info.js";
 
 export function cardWeather(
@@ -26,7 +27,7 @@ export function cardWeather(
   $SUNSET_H3.textContent = `${formHours(sunset, timezone)} PM`;
   $CIUDAD_H3.innerHTML = `${name} <span class="text-xs">${country}</span>`;
   $HUMEDAD_H3.textContent = humidity;
-  $GRADOS_H1.textContent = `${Math.floor(temp - 273.15)}º`;
+  $GRADOS_H1.textContent = `${Math.floor(temp - 273.15)}ºC`;
   $CALENDARIO_H3.textContent = date;
   $HORA_H3.textContent = time_24;
   if (Math.floor(temp - 273.15) <= 10) {
@@ -35,12 +36,12 @@ export function cardWeather(
     $ICON_TER.src = "./src/images/Icons/termometroC.png";
   }
   $ICON_TER.alt = "icon termometro";
+  weatherSite(sunrise, sunset, time_24, timezone, wea);
   $ICON_WEATHER.src = ICONS[wea.main];
   $ICON_WEATHER.alt = `icons ${wea.main}`;
 }
 
 export function cardForecast(obj) {
-  const $FOOTER_FORECAST = document.querySelector("[data-rol='footer']");
   const LIST = obj.list;
   const ARRAY_SECTION = [];
   LIST.forEach((elem) => {
@@ -52,29 +53,33 @@ export function cardForecast(obj) {
       ICONS.Clouds = "./src/images/Icons/nuboso.png";
     }
     let html = `
-    <header class="flex flex-col items-center justify-around p-3 w-full">
     <figure class="w-8 phoneUp:w-16">
     <img src="${ICONS[elem.weather[0].main]}" alt="icon ${
       elem.weather[0].main
     }">
     </figure>
     <h2>${elem.dt_txt}</h2>
-    </header>
-
-    <section class="grid grid-cols-2 gap-3 w-full">
+    <section class="grid grid-cols-2 gap-3">
     <h3>${Math.floor(elem.main.temp - 273.15)}º</h3>
     <h3>${elem.main.humidity}%</h3>
     <h3>${elem.clouds.all}%</h3>
     <h3>${elem.wind.speed}</h3>
     </section>
-
-    <footer class="w-full>
-    <h2>${elem.weather[0].description}</h2>
-    </footer>`;
-    const $SECTION = document.createElement("section");
-    $SECTION.innerHTML = html;
-    $SECTION.classList.add("phoneUp:text-xl", "w-1/5");
-    ARRAY_SECTION.push($SECTION);
+    <h2>${elem.weather[0].description}</h2>`;
+    const $DIV = document.createElement("div");
+    $DIV.innerHTML = html;
+    $DIV.classList.add(
+      "flex",
+      "flex-col",
+      "items-center",
+      "gap-2",
+      "text-xs",
+      "phoneUp:text-xl",
+      "p-2",
+      "block",
+      "w-[130px]"
+    );
+    ARRAY_SECTION.push($DIV);
   });
   return ARRAY_SECTION;
 }
