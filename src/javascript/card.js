@@ -1,5 +1,5 @@
 import { formHours } from "./formData.js";
-import { weatherSite } from "./weatherSite.js";
+import { mood } from "./weatherSite.js";
 import { ICONS } from "./weather_img_info.js";
 
 export function cardWeather(
@@ -36,7 +36,7 @@ export function cardWeather(
     $ICON_TER.src = "./src/images/Icons/termometroC.png";
   }
   $ICON_TER.alt = "icon termometro";
-  weatherSite(sunrise, sunset, time_24, timezone, wea);
+  mood(sunrise, sunset, time_24, timezone, wea);
   $ICON_WEATHER.src = ICONS[wea.main];
   $ICON_WEATHER.alt = `icons ${wea.main}`;
 }
