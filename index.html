@@ -279,29 +279,30 @@
         </section>
       </header>
       <footer
-        class="w-full mx-auto bg-gradientMoon rounded-xl p-1 overflow-hidden">
+        class="w-[300px] tablet:w-[540px] mx-auto bg-gradientMoon rounded-xl p-1 overflow-hidden"
+        id="footer">
         <section
-          class="w-[9999px] flex gap-1 items-center overflow-x-hidden"
+          class="w-[99999px] transition-all duration-1000 flex overflow-x-hidden"
           data-rol="footer"></section>
         <div class="w-full flex items-center justify-between">
-          <button>
+          <button data-rol="left">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="35"
+              height="35"
               viewBox="0 0 24 24"
-              class="fill-textSun md:hover:opacity-5 transition">
+              class="fill-textSun md:hover:opacity-50 transition md:w-10 md:h-10">
               <path
                 d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path>
             </svg>
           </button>
-          <button>
+          <button data-rol="right">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="35"
+              height="35"
               viewBox="0 0 24 24"
-              class="fill-textSun md:hover:opacity-5 transition">
+              class="fill-textSun md:hover:opacity-50 transition md:w-10 md:h-10">
               <path
                 d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
             </svg>

@@ -19,7 +19,7 @@ module.exports = {
         shadowMoon: "0 0 10px 10px rgba(0, 0, 0, 0.5)",
       },
       screens: {
-        tablet: "530px",
+        tablet: "560px",
         phoneUp: "375px",
       },
       backgroundImage: {

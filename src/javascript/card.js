@@ -60,7 +60,7 @@ export function cardForecast(obj) {
     </figure>
     <h2>${elem.dt_txt}</h2>
     <section class="grid grid-cols-2 gap-3">
-    <h3>${Math.floor(elem.main.temp - 273.15)}º</h3>
+    <h3>${Math.floor(elem.main.temp - 273.15)}ºC</h3>
     <h3>${elem.main.humidity}%</h3>
     <h3>${elem.clouds.all}%</h3>
     <h3>${elem.wind.speed}</h3>
@@ -71,13 +71,13 @@ export function cardForecast(obj) {
     $DIV.classList.add(
       "flex",
       "flex-col",
-      "items-center",
-      "gap-2",
       "text-xs",
-      "phoneUp:text-xl",
+      "phoneUp:text-xm",
+      "tablet:text-base",
       "p-2",
-      "block",
-      "w-[130px]"
+      "items-center",
+      "w-[150px]",
+      "tablet:w-[180px]"
     );
     ARRAY_SECTION.push($DIV);
   });
