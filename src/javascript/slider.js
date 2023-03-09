@@ -1,8 +1,14 @@
 export function slider() {
   const $FOOTER = document.getElementById("footer"),
     $FOOTER_FORECAST = document.querySelector("[data-rol='footer']");
-  let cont = $FOOTER.clientWidth >= 540 ? 3 : 2;
-  console.log($FOOTER.clientWidth);
+  let cont = 2;
+  if ($FOOTER.clientWidth >= 540 && $FOOTER.clientWidth < 900) {
+    cont = 3;
+  }
+  if ($FOOTER.clientWidth >= 900) {
+    cont = 5;
+  }
+  console.log(cont);
   let result = 0;
   $FOOTER.addEventListener("pointerdown", (e) => {
     const $FIRST = $FOOTER_FORECAST.firstElementChild;
